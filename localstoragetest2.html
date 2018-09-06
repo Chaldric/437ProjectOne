@@ -1,0 +1,99 @@
+
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+  <link rel = "stylesheet"
+            type = "text/css"
+            href = "dogWalk.css" />
+  <title>localStorage.html</title>
+  <meta charset = "UTF-8" />
+
+  <script type = "text/javascript">
+  //<![CDATA[
+
+  function greet(){
+    name = localStorage.getItem("name");
+    if (name == "null" || name == null){
+      alert("Hi, Stranger!");
+      name = prompt("What is your name?");
+      localStorage.setItem("name", name);
+    } else {
+      alert ("Hi, " + name + "!");
+    } // end greet
+    location.href = "failed.html";
+  } // end function
+
+  function clearValues(){
+    alert("clearing " + name + " from the database...");
+    localStorage.removeItem("name");
+    localStorage.removeItem("count");
+    //to clear all values at once, you can use this:
+    //localStorage.clear();
+
+    //clean up display
+    lblCounter = document.getElementById("lblCounter");
+    lblCounter.innerHTML = "You have been here 0 times";
+
+  }
+
+  function countVisits(){
+    str_count = localStorage.getItem("count");
+    //get a numeric value from str_count, put it in count
+    if (str_count == null || str_count == "null"){
+      count = 0;
+    } else {
+      count = parseInt(str_count);
+    } // end if
+
+    //increment count
+    count++;
+
+    //display count
+    lblCounter = document.getElementById("lblCounter");
+    lblCounter.innerHTML = "You have been here " + count + " times";
+
+    //store count
+    localStorage.setItem("count", count);
+  } // end count
+
+  function viewData(){
+    //shows all the key / value pairs
+
+    for (i = 0; i < localStorage.length; i++){
+      key = localStorage.key(i);
+      value = localStorage.getItem(key);
+      alert(key + ": " + value);
+    } // end for loop
+
+  } // end viewData
+
+  //]]>
+  </script>
+</head>
+
+<body onload = "countVisits()">
+  <h1>Local Storage Demo 2</h1>
+
+  <div class="C">
+    <button type = "button"
+            onclick = "greet()">
+      greet
+    </button>
+
+    <button type = "button"
+            onclick = "clearValues()">
+      clear
+    </button>
+
+    <button type = "button"
+            onclick = "viewData()">
+      view all data
+    </button>
+
+    <p>
+      <output id = "lblCounter">You've never been here...</output>
+    </p>
+  </div>
+
+</body>
+</html>

@@ -1,6 +1,10 @@
+Resources:
 https://cs.iupui.edu/~ajharris/437/
 http://www.aharrisbooks.net/h5g/
 http://www.aharrisbooks.net/h5g/h5g_11/
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div
+
+Picture:
 https://openclipart.org/detail/300395/living-room-scene
 https://openclipart.org/detail/8508/dog-simple-drawing
 https://openclipart.org/detail/17692/cartoon-dog

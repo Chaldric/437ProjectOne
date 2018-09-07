@@ -1,0 +1,39 @@
+<html>
+
+  <head>
+    <link rel = "stylesheet"
+              type = "text/css"
+              href = "dogWalk.css" />
+      <script type = "text/javascript">
+
+        function addWalk(){
+          localStorage.setItem("walk", 1);
+          location.href = "mainPage.html";
+        } // end clearValues
+
+      </script>
+  </head>
+
+  <body>
+
+    <p>
+        <img src = ""
+             alt = "Walking Dog on Leash" />
+    </p>
+
+    <p>
+        You decided to take your dog on a walk. You can tell that your dog is
+        enjoying the walk greatly. While outside your dog poops at its favorite
+        spot. Since you expected this to happen, you came prepared with a poop
+        bag and you place it in the trash uppon arriving home.
+    </p>
+
+    <div class="Selections">
+      <button type = "button"
+              onclick = "addWalk()">
+        Return to Home.
+      </button>
+    </div>
+  </body>
+
+</html>

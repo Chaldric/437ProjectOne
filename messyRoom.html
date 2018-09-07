@@ -1,0 +1,41 @@
+<html>
+
+  <head>
+    <link rel = "stylesheet"
+              type = "text/css"
+              href = "dogWalk.css" />
+
+              <script type = "text/javascript">
+
+                function clearValues(){
+                  localStorage.removeItem("play");
+                  localStorage.removeItem("walk");
+                  location.href = "mainPage.html";
+                } // end clearValues
+
+              </script>
+
+  </head>
+
+  <body>
+
+    <p>
+        <img src = ""
+             alt = "Trashed Room!" />
+    </p>
+
+    <p>
+      You decided to play games before playing with your dog. Your dog has
+      became very restless with all its built up energy and has trashed your
+      room.
+    </p>
+
+    <div class="Selections">
+      <button type = "button"
+              onclick = "clearValues()">
+        Return to Main Page.
+      </button>
+    </div>
+  </body>
+
+</html>

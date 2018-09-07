@@ -7,9 +7,8 @@
 
       <script type = "text/javascript">
 
-        function clearValues(){
-          localStorage.removeItem("play");
-          localStorage.removeItem("walk");
+        function addWalk(){
+          localStorage.setItem("play", 1);
           location.href = "mainPage.html";
         } // end clearValues
 
@@ -18,10 +17,10 @@
   </head>
 
   <body>
-    <h1>This is the fail page.</h1>
+
     <p>
         <img src = ""
-             alt = "Stinky Trashed Room!" />
+             alt = "Playing with Dog" />
     </p>
 
     <p>
@@ -31,8 +30,8 @@
 
     <div class="Selections">
       <button type = "button"
-              onclick = "clearValues()">
-        Return to Main Page.
+              onclick = "addWalk()">
+        Finish Playing.
       </button>
     </div>
   </body>

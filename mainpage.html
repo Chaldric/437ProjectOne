@@ -4,23 +4,73 @@
     <link rel = "stylesheet"
               type = "text/css"
               href = "dogWalk.css" />
+
+    <script type = "text/javascript">
+            function playGame(){
+              play = localStorage.getItem("play");
+              walk = localStorage.getItem("walk");
+              if (play == 1 && walk == 1){
+                location.href = "successfulCare.html";
+              } else if(play == 0 && walk == 1){
+                location.href = "messyRoom.html";
+              } else if(play == 1 && walk == 0){
+                location.href = "poopRoom.html";
+              } else {
+                location.href = "failed.html";
+              }
+            } // end playGame
+
+            function dogWalk(){
+              location.href = "dogWalk.html";
+            } // end dogWalk
+
+            function dogPlay(){
+              location.href = "dogPlay.html";
+            } // end dogPlay
+
+            function loadGame(){
+              play = localStorage.getItem("play");
+              walk = localStorage.getItem("walk");
+              if (play == "null" || play == null){
+                localStorage.setItem("play", 0);
+              }
+              if (walk == "null" || walk == null){
+                localStorage.setItem("walk", 0);
+              }
+            } // end loadGame
+
+    </script>
   </head>
 
-  <body>
-    <h1>This is the main page.</h1>
+  <body onload = "loadGame()">
+    <h1>Doggy Care Game!</h1>
     <p>
         <img src = ""
-             alt = "Doggy!" />
+             alt = "Your Room and Dog." />
     </p>
 
     <p>
-        Some Text
+        You are a happy dog owner and avid gamer. Your hard day of school has
+        just come to an end and you have returned home to your games and dog.
+        You are faced with the dilemma of either taking care of your dog right
+        away or playing some games and caring for your dog later.
     </p>
 
     <p>
-        <a href = "failed.html">page2</a>
-        <a href = "failed.html">page2</a>
-        <a href = "failed.html">page2</a>
+      <div class="Selections">
+        <button type = "button"
+                onclick = "playGame()">
+          Choose to play a game.
+        </button>
+        <button type = "button"
+                onclick = "dogWalk()">
+          Go on a walk with your dog.
+        </button>
+        <button type = "button"
+                onclick = "dogPlay()">
+          Play with your dog.
+        </button>
+      </div>
     </p>
   </body>
 

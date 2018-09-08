@@ -7,7 +7,9 @@
 
       <script type = "text/javascript">
 
-        function addWalk(){
+        /* Sets the value of play to true before transfering the player back
+        to the main page. */
+        function addPlay(){
           localStorage.setItem("play", 1);
           location.href = "mainPage.html";
         } // end clearValues
@@ -17,20 +19,30 @@
   </head>
 
   <body>
-
+    <h1>Playing with Dog</h1>
     <p>
-        <img src = ""
+        <img src = "Images/dog-with-toy.png"
              alt = "Playing with Dog" />
+    </p>
+    <p>
+        <audio controls = "controls">
+
+          <source src = "Sound/sqeaky_toy.mp3"
+            type = "audio/mp3" />
+          <a href = "Sound/sqeaky_toy.mp3">play sound</a>
+        </audio>
     </p>
 
     <p>
-        You decided to play games instead of caring for your dog and now your
-        room has been trashed and there is a stinky dog poop on your floor.
+        You decided to spend time playing with your dog. You get out its favorite
+        squeaky bone toy and play fetch with it. After a short period of time
+        your dog begins to get tired and you decide that you have played for long
+        enough.
     </p>
 
     <div class="Selections">
       <button type = "button"
-              onclick = "addWalk()">
+              onclick = "addPlay()">
         Finish Playing.
       </button>
     </div>

@@ -6,6 +6,9 @@
               href = "dogWalk.css" />
 
     <script type = "text/javascript">
+
+            /* The playGame function uses the play and walk values to determine
+            which ending page to transfer the player to. */
             function playGame(){
               play = localStorage.getItem("play");
               walk = localStorage.getItem("walk");
@@ -20,14 +23,19 @@
               }
             } // end playGame
 
+            /* Link to dog walk page. */
             function dogWalk(){
               location.href = "dogWalk.html";
             } // end dogWalk
 
+            /* Link to dog play page. */
             function dogPlay(){
               location.href = "dogPlay.html";
             } // end dogPlay
 
+            /* Loads the play and walk values from local storage upon the Page
+            being loaded. Also sets the values to a default value if this
+            is the first time being loaded. */
             function loadGame(){
               play = localStorage.getItem("play");
               walk = localStorage.getItem("walk");
@@ -37,20 +45,58 @@
               if (walk == "null" || walk == null){
                 localStorage.setItem("walk", 0);
               }
-            } // end loadGame
 
+              /* Upon loading the main page, the two game variables walked and
+                played must desplayed as either having been completed or not
+                for the game user.
+              */
+              playedVar = document.getElementById("playedVar");
+              if (play == 1){
+                playedVar.innerHTML = "Successfully Played";
+              } else {
+                playedVar.innerHTML = "Unsuccessfully Played";
+              }
+
+              walkedVar = document.getElementById("walkedVar");
+              if (walk == 1){
+                walkedVar.innerHTML = "Successfully Walked";
+              } else {
+                walkedVar.innerHTML = "Unsuccessfully Walked";
+              }
+
+            } // end loadGame
+            /*
+              Pictures:
+                Cartoon dog by lemmling : https://openclipart.org/detail/17692/cartoon-dog
+                Living Room Scene by VexStrips : https://openclipart.org/detail/300395/living-room-scene
+                Self Explanatory by GDJ : https://openclipart.org/detail/294319/self-explanatory
+                Park view by anarres : https://openclipart.org/detail/233486/park-view
+                Resting/sleeping dog by f_featherbrain : https://openclipart.org/detail/163699/restingsleeping-dog
+                Walking the Dog by oksmith : https://openclipart.org/detail/297809/walking-the-dog
+                Camouflage by yamachem : https://openclipart.org/detail/226337/camouflage
+              Sound:
+              Two Barks.wav by Puniho : https://freesound.org/people/Puniho/sounds/115536/
+              Dog Toy by ScreamStudio : https://freesound.org/people/ScreamStudio/sounds/392617/
+              
+            */
     </script>
   </head>
 
   <body onload = "loadGame()">
     <h1>Doggy Care Game!</h1>
+    <p class="gameVar">
+      <output id = "playedVar">Unsuccessfully Played</output>
+    </p>
+    <p class="gameVar">
+      <output id = "walkedVar">Unsuccessfully Walked</output>
+    </p>
     <p>
-        <img src = ""
-             alt = "Your Room and Dog." />
+        <img src = "Images/dog-in-room.png"
+             alt = "Your Room and Dog."/>
     </p>
 
     <p>
-        You are a happy dog owner and avid gamer. Your hard day of school has
+        You are a happy dog owner and avid computer gamer. Your hard day of school has
         just come to an end and you have returned home to your games and dog.
         You are faced with the dilemma of either taking care of your dog right
         away or playing some games and caring for your dog later.
@@ -59,16 +105,16 @@
     <p>
       <div class="Selections">
         <button type = "button"
-                onclick = "playGame()">
-          Choose to play a game.
-        </button>
-        <button type = "button"
                 onclick = "dogWalk()">
           Go on a walk with your dog.
         </button>
         <button type = "button"
                 onclick = "dogPlay()">
           Play with your dog.
+        </button>
+        <button type = "button"
+                onclick = "playGame()">
+          Choose to play a computer game.
         </button>
       </div>
     </p>

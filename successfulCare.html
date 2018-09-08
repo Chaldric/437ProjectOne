@@ -7,6 +7,8 @@
 
       <script type = "text/javascript">
 
+      /* Clears the values play and walk from local storage to restart the game.
+      This is how the game is restarted. */
         function clearValues(){
           localStorage.removeItem("play");
           localStorage.removeItem("walk");
@@ -17,10 +19,18 @@
   </head>
 
   <body>
-    <h1></h1>
+    <h1>Successful Care!</h1>
     <p>
-        <img src = ""
+        <img src = "Images/sleepy-dog.png"
              alt = "Sleepy Dog!" />
+    </p>
+    <p>
+      <audio controls = "controls">
+
+        <source src = "Sound/dog_song.mp3"
+          type = "audio/mp3" />
+        <a href = "Sound/dog_song.mp3">play sound</a>
+      </audio>
     </p>
 
     <p>
